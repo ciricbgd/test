@@ -1,0 +1,68 @@
+// -----------------------------  VARS ---------------------------------------------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,800&display=swap');
+// -------- Colors -----------------------------------------------------------
+
+$color1: #f5f5f5;
+$color2: #f7de33;
+$color3: #45b759;
+
+$bgcolor1: $color1;
+$bgcolor2: $color2;
+$bgcolor3: $color3;
+
+//!-------- Colors -----------------------------------------------------------
+
+// -------- Fonts -----------------------------------------------------------
+
+$font1: 'Montserrat';
+@font-face {
+  font-family: $font1;
+  src: url(./fonts/Montserrat/Montserrat-Medium.ttf);
+}
+@font-face {
+  font-family: $font1;
+  font-weight: bold;
+  src: url(./fonts/Montserrat/Montserrat-Black.ttf);
+}
+
+$font2: 'Arial';
+
+//!-------- Fonts -----------------------------------------------------------
+
+// -------- Responsive design -----------------------------------------------------------
+
+$s: 320px;
+$m: 480px;
+$l: 768px;
+$xl: 1024px;
+$laptop: 1366px;
+
+@mixin above($size...) {
+  @if length($size) ==1 {
+    @media screen and (min-width: nth($size, 1)) {
+      @content;
+    }
+  }
+
+  @if length($size) ==2 {
+    @media screen and (max-width: nth($size, 2) - 0.02px) and (min-width: nth($size, 1)) {
+      @content;
+    }
+  }
+}
+
+@mixin below($size...) {
+  @if length($size) ==1 {
+    @media screen and (max-width: nth($size, 1)) {
+      @content;
+    }
+  }
+
+  @if length($size) ==2 {
+    @media screen and (max-width: nth($size, 2) - 0.02px) and (min-width: nth($size, 1)) {
+      @content;
+    }
+  }
+}
+
+//!-------- Responsive design -----------------------------------------------------------

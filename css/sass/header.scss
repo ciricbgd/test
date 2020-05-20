@@ -1,0 +1,19 @@
+.header--register {
+  width: 100%;
+  font-size: 1.5rem;
+  margin: 3em 0 4em 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @include below($m) {
+    font-size: 80%;
+  }
+
+  h1 {
+    font-weight: normal;
+    margin-bottom: 1em;
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <link rel="icon" href="demo_icon.gif" type="image/gif" sizes="16x16"> -->
+    <title>Citrus Systems - FE Test</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <header class="header header--register">
+        <h1>Register with:</h1>
+        <button
+          class="button clickable button__selector button__selector--email"
+          onclick="select__form(this, '.field__email', '.field_error--email')"
+          active
+        >
+          Email
+        </button>
+        <button
+          class="button clickable button__selector button__selector--phone"
+          onclick="select__form(this, '.field__phone', '.field_error--phone')"
+        >
+          Phone
+        </button>
+      </header>
+
+      <!-- Form -->
+      <form class="form validate-me" id="form" data-validate>
+        <fieldset class="field field--single field__email" active>
+          <legend>Email</legend>
+          <input
+            type="email"
+            name="email"
+            class="form__email"
+            data-bouncer-target=".field_error--email"
+            minlength="5"
+            maxlength="100"
+            required
+          />
+        </fieldset>
+        <div class="field__error field_error--email"></div>
+
+        <fieldset class="field field--single field__phone remove">
+          <legend>Phone</legend>
+          <input
+            type="tel"
+            name="phone"
+            class="form__phone"
+            data-bouncer-target=".field_error--phone"
+            pattern="[+()/\d]{5,15}"
+          />
+        </fieldset>
+        <div class="field__error field_error--phone"></div>
+
+        <br />
+
+        <p class="form__option-name">Currency:</p>
+        <input
+          type="radio"
+          class="form__radio"
+          name="currency"
+          id="form__radio--eur"
+          value="eur"
+          checked
+        />
+        <label class="form__label" for="form__radio--eur">€ EUR</label>
+
+        <input
+          type="radio"
+          class="form__radio"
+          name="currency"
+          id="form__radio--usd"
+          value="usd"
+        />
+        <label class="form__label" for="form__radio--usd">$ USD</label>
+
+        <input
+          type="radio"
+          class="form__radio"
+          name="currency"
+          id="form__radio--gbp"
+          value="gbp"
+        />
+        <label class="form__label" for="form__radio--usd">£ GBP</label>
+
+        <br /><br /><br /><br /><br />
+
+        <input
+          type="checkbox"
+          class="form__check"
+          name="consent"
+          id="form__check--terms"
+          value="terms"
+          data-bouncer-target=".field_error--terms"
+          required
+        />
+        <label class="form__label" for="form__radio--usd">
+          I agree to the <a href="#">Terms of Service</a></label
+        >
+        <div class="field_error--terms"></div>
+
+        <br />
+
+        <input
+          type="checkbox"
+          class="form__check"
+          name="news"
+          id="form__check--news"
+          value="news"
+        />
+
+        <label class="form__label" for="form__radio--usd">
+          I want to recieve newsletter</label
+        >
+
+        <br /><br /><br /><br />
+
+        <input type="submit" value="Submit" class="form__submit clickable" />
+
+        <div class="loading__icon invisible"></div>
+        <p class="form__submit__info remove">
+          You have been registered
+        </p>
+      </form>
+    </div>
+    <!-- Scripts -->
+    <script src="./js//bouncer-master/dist/bouncer.polyfills.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+form {
+  font-size: 0.85rem;
+
+  * {
+    font-size: 1.3em;
+  }
+
+  @include below($m) {
+    font-size: 0.5rem;
+  }
+}
+
+input {
+  background-color: transparent;
+  font-family: $font2;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: $color1 !important;
+  }
+}
+
+.field--single {
+  border-style: solid;
+  border-width: 0.15em;
+
+  &:focus-within {
+    &,
+    legend {
+      border-color: $bgcolor3;
+    }
+    legend {
+      color: $color3;
+      transform: scale(0.8);
+      transform-origin: center;
+      transition: transform 150ms;
+    }
+  }
+
+  legend {
+    margin-left: 2em;
+    padding: 0 1em;
+    font-size: 1em;
+    transition: transform 75ms;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    padding: 0.5em 1em 0.5em 1em;
+  }
+}
+
+.field__error {
+  margin-top: 0.2em;
+  * {
+    color: $color2;
+    font-size: 0.9em;
+  }
+}
+
+.form__option-name {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+.form__radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  display: inline-block;
+  cursor: pointer;
+  width: 0.8em;
+  height: 0.8em;
+  outline: 0.15em solid $bgcolor1;
+  outline-offset: 0.15em;
+  margin-left: 0.4em;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  &:checked {
+    background-color: $bgcolor3;
+  }
+  &:focus {
+    outline: 0.15em solid $bgcolor1;
+    outline-offset: 0.15em;
+  }
+}
+
+.form__check {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  display: inline-block;
+  cursor: pointer;
+  width: 0.8em;
+  height: 0.8em;
+  outline: 0.15em solid $bgcolor1;
+  outline-offset: 0.15em;
+  margin-left: 0.4em;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  &:checked {
+    background-color: $bgcolor2;
+  }
+  &:focus {
+    outline: 0.15em solid $bgcolor1;
+    outline-offset: 0.15em;
+  }
+}
+
+.form__label {
+  margin: 0 2.2em 0 0.4em;
+  font-size: 1.2em;
+  * {
+    font-size: 1em;
+  }
+}
+
+.field_error--terms {
+  font-size: 0.8em;
+  margin-top: 1em;
+  * {
+    color: $color2;
+  }
+}
+
+.button {
+  background: none;
+  padding: 0.3em 0.7em;
+  margin: 0 1em;
+  font-size: 1em;
+  border: 0.12em solid $color1;
+
+  &:hover,
+  &[active] {
+    color: $color2;
+    border-color: $color2;
+  }
+}
+
+.form__submit {
+  padding: 0.5em 1em 0.5em 1em;
+  display: inline-block;
+  font-size: 2em;
+  border: 0.15em $bgcolor2 solid;
+  color: $color2;
+  margin-right: 1em;
+  vertical-align: middle;
+
+  @include below($m) {
+    margin: 0 auto;
+  }
+
+  &[disabled] {
+    opacity: 0.2;
+    border-color: $color1;
+    color: $color1;
+  }
+}
+
+.loading__icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 5em;
+  height: 5em;
+  background-image: url('../media/img/loading.svg');
+  transform-origin: center;
+
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 7s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form__submit__info--success {
+  color: $color3;
+}
+
+.form__submit__info--fail {
+  color: $color2;
+}

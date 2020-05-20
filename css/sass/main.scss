@@ -1,0 +1,79 @@
+// -----------------------------  MAIN CSS ---------------------------------------------------------------------------
+@import './vars';
+@import './header';
+@import './form-elements';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color: $color1;
+  font-family: $font1;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-image: url('../media/img/background.png');
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: $color2;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+//Inline-block
+.block--inline {
+  display: inline-block;
+}
+
+//Clickable stuff
+.clickable {
+  cursor: pointer;
+}
+
+//Floats
+.float--left {
+  float: left;
+}
+
+.float--right {
+  float: right;
+}
+
+.clear-after {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.invisible {
+  visibility: hidden;
+}
+.remove {
+  display: none;
+}
